@@ -1,0 +1,496 @@
+<body>
+<div id="fit"><div class="stage" id="stage">
+
+<div class="topbar">
+  <div class="brand"><i>◆</i> 天基感知 · 智算赋能 <span style="color:#5f7691;font-weight:500;margin-left:10px">天元感通算用数字化信息服务平台 · 功能及规划汇报</span></div>
+  <div class="spacer"></div>
+  <div class="clock" id="clock">--:--:--</div>
+  <button id="fsBtn" type="button" onclick="fsToggle()">⛶ 全屏</button>
+  <div class="modechip" id="modeChip">讲解模式</div>
+</div>
+
+<!-- ============ S0 封面 ============ -->
+<section class="scene on" id="s0">
+  <canvas id="globeHero"></canvas>
+  <div class="hero">
+    <div class="badgeLine" id="heroBadge">天 空 地 海 一 体 · 感 通 算 用 融 合</div>
+    <h1>天基感知 · 智算赋能</h1>
+    <div class="fastRow">
+      <span class="fastTag">FAST</span>
+      <span class="fastSep"></span>
+      <span class="fastItem"><b><span class="fl">F</span>eeling</b><i>全域感知</i></span>
+      <span class="fastItem"><b><span class="fl">A</span>ccess</b><i>通信融合</i></span>
+      <span class="fastItem"><b><span class="fl">S</span>ystem</b><i>算力平台</i></span>
+      <span class="fastItem"><b><span class="fl">T</span>ransformation</b><i>应用转化</i></span>
+    </div>
+    <div class="divider"></div>
+    <div class="desc">让卫星从<b>「拍照回传」</b>进化为<b>「在轨思考」</b><br>让数据从<b>「堆在硬盘里」</b>变成<b>「直达决策者手中」</b></div>
+  </div>
+  <div class="heroBtns">
+    <button class="bigbtn solid" onclick="startAuto(0)">▶ 顺序演示（约5分钟）</button>
+    <button class="bigbtn" onclick="go(1,1)">进入平台 · 自由探索</button>
+  </div>
+  <div class="heroStat">
+    <div><b id="k1">0</b><span>在轨协同卫星</span></div>
+    <div><b id="k2">0</b><span>分钟级响应时效</span></div>
+    <div><b id="k3">0</b><span>% 回传数据量压缩</span></div>
+    <div><b id="k4">0</b><span>大行业场景板块</span></div>
+  </div>
+</section>
+
+<!-- ============ S1 战略总览 ============ -->
+<section class="scene" id="s1">
+  <div class="eyebrow"><b>STRATEGIC OVERVIEW</b></div>
+  <h2 class="head">为什么是「感通算用」一体化？<small>四个环节单独看都不新鲜，真正稀缺的是「利用天空地融合数据，让 AI 来解决场景的自动化链路」</small></h2>
+  <div class="archWrap">
+    <div class="archLayers">
+      <div class="layer" style="--lc:#25e6c0" onclick="go(2)">
+        <div class="lc">感</div>
+        <div class="lt"><h3>全域感知</h3><p>Feeling</p></div>
+        <div class="ld">天·空·地·海多维采集。<em>SAR 穿云透雨</em>、红外识火点、InSAR 测毫米形变、高光谱辨物质 —— 看得全、看得清、看得透</div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="layer" style="--lc:#3fa9ff" onclick="go(3)">
+        <div class="lc">通</div>
+        <div class="lt"><h3>融合通信</h3><p>Access</p></div>
+        <div class="ld">高/中/低轨卫星 + 5G/光纤 + 自组网。<em>AI 智能链路调度</em>按业务优先级与过境窗口动态分配带宽 —— 连得上、传得快、断不了</div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="layer" style="--lc:#a97bff" onclick="go(4)">
+        <div class="lc">算</div>
+        <div class="lt"><h3>协同算力</h3><p>System</p></div>
+        <div class="ld">星上在轨推理 + 边缘云 + 智算中心三级协同。<em>把「传数据」变成「传信息」</em> —— 算得动、算得快、算得省</div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="layer" style="--lc:#ffb63d" onclick="go(5)">
+        <div class="lc">用</div>
+        <div class="lt"><h3>智能应用</h3><p>Transformation</p></div>
+        <div class="ld">行业大模型 + AI 智能体。<em>系统自动编排卫星、调算力、出方案</em> —— 用得上、用得好</div>
+        <div class="arrow">›</div>
+      </div>
+    </div>
+    <div class="aiBand" title="AI 大模型贯穿感通算用全流程">
+      <i class="r"></i>
+      <span>AI 大模型贯穿全链路 · 自动编排</span>
+      <i class="r"></i>
+    </div>
+    <div class="archSide">
+      <div class="whyCard">
+        <h4>① 技术拐点已到</h4>
+        <p>低轨星座规模化、星载 AI 芯片算力突破、遥感大模型成熟——三条曲线在 2025—2027 年交汇，卫星首次具备「在轨思考」能力。</p>
+      </div>
+      <div class="whyCard">
+        <h4>② 需求已经变了</h4>
+        <p>领导要的不是一张影像，而是「未来 6 小时火往哪烧、谁要撤、路怎么封」。感知必须直通决策，中间任何一环掉链子都等于零。</p>
+      </div>
+      <div class="whyCard">
+        <h4>③ 成本结构反转</h4>
+        <p>发射成本十年降一个数量级、算力单价持续下探、星上处理省下 90% 昂贵带宽——规模化从「买不起」变成「算得过账」。</p>
+      </div>
+      <div class="whyCard" style="border-color:rgba(255,182,61,.4);background:rgba(40,28,10,.4)">
+        <h4>闭环：用 → 反哺 → 感</h4>
+        <p>应用侧反馈的样本与目标，反过来训练星上模型、优化下一轮卫星任务规划。<b style="color:#ffcc5c">系统越用越准，越用越省。</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="footNote">提示：点击左侧任意一层可直接进入该章节 · 按 ← → 键翻页 · 按 P 播放/暂停自动演示</div>
+</section>
+
+<!-- ============ S2 感知 ============ -->
+<section class="scene" id="s2">
+  <div class="eyebrow"><b>01 / FEELING</b></div>
+  <h2 class="head">感 · 全域多维感知 <small>同一场火、同一场内涝：换个传感器，看到的世界完全不同 —— 请现场拖动「云层」滑块</small></h2>
+  <div class="senseBody">
+    <div class="viewer">
+      <canvas id="senseCv" style="min-height:0"></canvas>
+      <div class="viewerBar">
+        <button class="sbtn on" data-s="opt" style="--sc:#4fd1ff">可见光</button>
+        <button class="sbtn" data-s="sar" style="--sc:#25e6c0">SAR 雷达</button>
+        <button class="sbtn" data-s="ir" style="--sc:#ff7a45">红外热成像</button>
+        <button class="sbtn" data-s="hyp" style="--sc:#a97bff">高光谱</button>
+        <button class="sbtn" data-s="insar" style="--sc:#ffb63d">InSAR 形变</button>
+      </div>
+      <div class="viewerBar2">
+        <span class="clLabel">☁ 云层遮挡</span>
+        <input type="range" id="cloudSlider" min="0" max="100" value="20">
+        <span id="cloudVal" class="num">20%</span>
+        <span class="clNote">← 往右拉到 80% 试试：可见光失效，SAR 照样清晰</span>
+      </div>
+    </div>
+    <div class="senseInfo">
+      <div class="senseCard" style="--sc:#4fd1ff">
+        <div class="top"><h4 id="senTitle">可见光 · 亚米级成像</h4><span class="tag" id="senBand">0.4–0.9 μm</span></div>
+        <p id="senDesc">最接近人眼的成像方式，分辨率可达 0.3 m，用于地物识别、变化检测、违法建设核查。致命短板：云雾、夜间完全失效。</p>
+        <div class="pillRow" id="senPills"></div>
+      </div>
+      <div class="senseCard" style="--sc:#25e6c0">
+        <div class="top"><h4>为什么必须有卫星：四个「地面做不到」</h4></div>
+        <div class="kvGrid">
+          <div class="kvBig"><b>看得全<i>范围大</i></b><span>一次成像上千公里宽，一个省尽收眼底</span></div>
+          <div class="kvBig"><b>看得透<i>不受限</i></b><span>有云有雨、天黑了，照样拍得清清楚楚</span></div>
+          <div class="kvBig"><b>看得准<i>精度高</i></b><span>大坝、地面沉降一毫米的变化都测得出</span></div>
+          <div class="kvBig"><b>看得到<i>无死角</i></b><span>深山、远海、无人区，没有信号也覆盖</span></div>
+        </div>
+      </div>
+      <div class="senseCard" style="--sc:#ffb63d;border-color:rgba(255,182,61,.35)">
+        <div class="top"><h4>关键变革：星上 AI，在轨就把目标找出来</h4></div>
+        <p><b style="color:#ff7a45">传统流程：</b>整景影像回传 → 地面慢慢解译<br><b style="color:#25e6c0">天数天算：</b>星上 AI 优先完成计算，只回传含目标的切片</p>
+        <div class="metricLine">大小：整景<b class="num">1.2GB</b> → 切片<b class="num">2.3MB</b> ｜ 通量：<b class="num" style="color:#25e6c0">↓99.8%</b> ｜ 时效：<b style="color:#ffcc5c">从小时级压缩到分钟级</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="footNote">交互提示：切换传感器观察成像差异 · 把「云层」拉到 80% 以上 —— 可见光失效，而 SAR 依然清晰</div>
+</section>
+
+<!-- ============ S3 通信 ============ -->
+<section class="scene" id="s3">
+  <div class="eyebrow"><b>02 / ACCESS</b></div>
+  <h2 class="head">通 · 星地一体融合网络 <small>鼠标移动即可读取实时经纬度 · 点击地图任意位置 —— 系统按真实坐标判定地形，自动选择最优链路并逐段解说</small></h2>
+  <div class="commBody">
+    <div class="mapCol">
+      <div class="mapStage">
+        <div class="mapBox"><canvas id="mapCv"></canvas></div>
+        <div class="mapCoord" id="mapCoord">经度 — · 纬度 —</div>
+        <div class="hintPin">🛰 点击地图任意位置，模拟该点发起一次应急回传</div>
+      </div>
+      <div class="flowPanel">
+        <div class="flowHead"><b>信号链路 · 实时解说</b><span id="flowSub">点击地图任一点后，这里按 ① → ⑤ 逐步说明：数据是怎么从现场一步步走到指挥中心的</span></div>
+        <div class="flowSteps" id="flowSteps"></div>
+      </div>
+      <div class="mapLegend">
+        <span><i></i>陆域</span>
+        <span><i class="dot"></i>地面站</span>
+        <span><i class="leo"></i>LEO 低轨</span>
+        <span><i class="geo"></i>GEO 高通量高轨</span>
+        <span><i class="lk"></i>信号链路</span>
+        <span class="note">虚线=赤道/回归线 · 深色=夜间半球</span>
+      </div>
+    </div>
+    <div class="linkPanel">
+      <div class="linkHead">
+        <h3 id="locName">📍 请选择地点</h3>
+        <div class="sub2" id="locDesc">地面公网在那里可能完全不可用 —— 这正是卫星通信的价值所在。</div>
+      </div>
+      <div class="seg" id="segList">
+        <div class="segItem" data-k="5g"><div class="ico">📶</div><div class="txt"><b>地面 5G / 光纤</b><span>首选、成本最低</span></div><div class="ms">—</div></div>
+        <div class="segItem" data-k="leo"><div class="ico">🛰</div><div class="txt"><b>LEO 低轨卫星</b><span>跑得快、时延低、全球覆盖</span></div><div class="ms">—</div></div>
+        <div class="segItem" data-k="hts"><div class="ico">📡</div><div class="txt"><b>GEO 高通量高轨卫星</b><span>定点值守、带宽大、覆盖稳</span></div><div class="ms">—</div></div>
+        <div class="segItem" data-k="bd"><div class="ico">🧭</div><div class="txt"><b>卫星短报文</b><span>无网最后一道防线</span></div><div class="ms">—</div></div>
+      </div>
+      <div class="senseCard" style="--sc:#3fa9ff">
+        <div class="top"><h4>AI 在其中做什么：智能链路调度</h4></div>
+        <p>大模型综合「卫星过境窗口 + 降雨衰耗 + 业务优先级 + 队列积压」，动态编排：<b style="color:#8fd3ff">火灾现场的热成像切片插队优先传，例行巡检数据排队等下一个过境窗口。</b><br>
+        <span style="color:#8aa3c0">效果：链路利用率 ↑ 40%，关键业务端到端时延 ↓ 60%。</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="footNote">交互提示：点击地图任意位置 —— 看系统如何自动选链路、逐段解说 · 内置 20 处全球典型场景可逐一点击对比</div>
+</section>
+
+<!-- ============ S4 算力 ============ -->
+<section class="scene" id="s4">
+  <div class="eyebrow"><b>03 / SYSTEM</b></div>
+  <h2 class="head">算 · 星地协同三级算力 <small>请拖动下方两个滑块，看调度引擎如何自动为任务选择「星上 / 边缘 / 中心」算力</small></h2>
+  <div class="compBody">
+    <div class="compLeft">
+      <div class="ctrl">
+        <label>任务时效要求 <b id="urgVal">极高（秒—分钟级）</b></label>
+        <div class="sliderWide"><em class="endL">低</em><input type="range" id="urg" min="0" max="100" value="85"><em class="endR">高</em></div>
+      </div>
+      <div class="ctrl">
+        <label>原始数据量 <b id="volVal">1.2 GB（整景全色）</b></label>
+        <div class="sliderWide"><em class="endL">小</em><input type="range" id="vol" min="0" max="100" value="80"><em class="endR">大</em></div>
+      </div>
+      <div class="ctrl">
+        <label>任务类型 <b id="typeVal">应急 · 火点识别</b></label>
+        <div class="sliderWide"><em class="endL">缓</em><input type="range" id="ttype" min="0" max="100" value="90"><em class="endR">急</em></div>
+      </div>
+      <div class="taskBox" id="taskBox">调度引擎：任务紧急度极高、数据量大 → 优先在<b>星上完成推理</b>，仅回传目标切片与坐标。</div>
+    </div>
+    <div class="compRight" id="plans">
+      <div class="plan" data-p="edge">
+        <div class="rank">B</div>
+        <div class="pmain">
+          <h4>星上在轨算力（On-board AI）</h4>
+          <p>星载 AI 芯片 · 在轨完成检测/分类 · 仅下行结果</p>
+          <div class="bar"><i id="barOn" style="width:0;background:linear-gradient(90deg,#a97bff,#25e6c0)"></i></div>
+        </div>
+        <div class="pstat"><div><b id="sOnT" style="color:#25e6c0">—</b><span>端到端</span></div><div><b id="sOnB" style="color:#3fa9ff">—</b><span>下行量</span></div><div><b id="sOnE" style="color:#ffb63d">—</b><span>综合成本</span></div></div>
+      </div>
+      <div class="plan" data-p="edge2">
+        <div class="rank">C</div>
+        <div class="pmain">
+          <h4>地面站边缘算力（Edge Cloud）</h4>
+          <p>原始影像下传至地面站 · 边缘节点就近解译</p>
+          <div class="bar"><i id="barEd" style="width:0;background:linear-gradient(90deg,#3fa9ff,#25e6c0)"></i></div>
+        </div>
+        <div class="pstat"><div><b id="sEdT" style="color:#25e6c0">—</b><span>端到端</span></div><div><b id="sEdB" style="color:#3fa9ff">—</b><span>下行量</span></div><div><b id="sEdE" style="color:#ffb63d">—</b><span>综合成本</span></div></div>
+      </div>
+      <div class="plan" data-p="center">
+        <div class="rank">D</div>
+        <div class="pmain">
+          <h4>中心智算中心（GPU 集群 / 大模型）</h4>
+          <p>全量数据入湖 · 大模型训练与深度分析 · 非实时</p>
+          <div class="bar"><i id="barCe" style="width:0;background:linear-gradient(90deg,#a97bff,#3fa9ff)"></i></div>
+        </div>
+        <div class="pstat"><div><b id="sCeT" style="color:#25e6c0">—</b><span>端到端</span></div><div><b id="sCeB" style="color:#3fa9ff">—</b><span>下行量</span></div><div><b id="sCeE" style="color:#ffb63d">—</b><span>综合成本</span></div></div>
+      </div>
+      <div class="senseCard" style="--sc:#a97bff">
+        <div class="top"><h4>调度引擎的决策逻辑（可解释）</h4></div>
+        <div id="expl" class="explWrap">评分 = 时效权重 × 紧急度 − 带宽成本 − 链路等待时间。当前任务紧急度 85/100、可用过境窗口 3 个。
+          <div class="explConc">★ 当前：<b>星上在轨推理</b> 得分最高</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footNote">交互提示：把「任务时效要求」拉低、数据量拉高 —— 调度引擎会自动改判为「中心智算中心批处理」，成本最优</div>
+</section>
+
+<!-- ============ S5 应用 ============ -->
+<section class="scene" id="s5">
+  <div class="eyebrow"><b>04 / TRANSFORMATION</b></div>
+  <h2 class="head">用 · 四大行业板块，同一个底座 <small>每个板块都回答三个问题：卫星解决了什么地面解决不了的事？AI 又把这件事推进到哪一步？</small></h2>
+  <div class="indTabs" id="indTabs">
+    <div class="indTab on" data-i="0">应急管理 / 防灾减灾<span>救 灾 救 命</span></div>
+    <div class="indTab" data-i="1">智慧城市 / 社会治理<span>城 市 体 检</span></div>
+    <div class="indTab" data-i="2">农林水利 / 粮食安全<span>藏 粮 于 地</span></div>
+    <div class="indTab" data-i="3">生态环保 / 双碳<span>绿 水 青 山</span></div>
+  </div>
+  <div class="useBody">
+    <div class="useCard">
+      <h3 id="uTitle">应急管理 · 全灾种全流程</h3>
+      <div class="pain" id="uPain">痛点：灾害现场往往「三断」——断网、断电、断路。地面手段进不去、看不全、传不回。</div>
+      <div class="row2">
+        <div class="mini"><h5>🛰 卫星的关键作用</h5><ul id="uSat"></ul></div>
+        <div class="mini"><h5 class="g">🤖 AI 的关键作用</h5><ul id="uAi"></ul></div>
+      </div>
+      <div class="sceneViz"><canvas id="indCv"></canvas><div class="vizTag" id="indTag">应急管理 · 实时态势底图</div></div>
+      <div class="effRow" id="uEff"></div>
+    </div>
+    <div class="useCard">
+      <h3>统一数字底座 · 一套能力，四次复用</h3>
+      <div class="pain" style="color:#ffd08a;background:rgba(255,182,61,.1);border-color:var(--c-use)">四 个 板 块 共 享 同 一 套 感 知 资 源 、算 力 池 与 大 模 型 —— 不 重 复 建 设</div>
+      <div class="row2">
+        <div class="mini"><h5>时空数据底座</h5><ul>
+          <li>统一时空基准，多源数据自动配准</li>
+          <li>影像 / 矢量 / 物联 / 业务四库一体</li>
+          <li>数据血缘与质量可追溯</li>
+        </ul></div>
+        <div class="mini"><h5 class="g">遥感大模型 + 智能体工厂</h5><ul>
+          <li>视觉基础模型：一次预训练，多场景微调</li>
+          <li>开放词汇检测：说「找违建」就能找</li>
+          <li>Agent 编排：自动写卫星任务、自动出报告</li>
+        </ul></div>
+      </div>
+      <div class="sceneViz"><canvas id="baseCv"></canvas><div class="vizTag">统一数字底座 · 星地一体示意图</div></div>
+      <div class="effRow">
+        <div class="eff"><b>1</b><span>套底座</span></div>
+        <div class="eff"><b>4</b><span>大板块</span></div>
+        <div class="eff"><b>N</b><span>类场景可扩展</span></div>
+        <div class="eff"><b>↓45%</b><span>重复建设成本</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footNote">交互提示：点击顶部四个板块标签切换（应急 / 城市 / 农林水利 / 生态环保）· 再进入「全链路实景推演」看完整过程</div>
+</section>
+
+<!-- ============ S6 推演 ============ -->
+<section class="scene" id="s6">
+  <div class="eyebrow"><b>05 / FULL-CHAIN SIMULATION</b></div>
+  <h2 class="head">全链路实景推演 <small>选中场景后点击播放：从卫星发现异常，到决策指令下达，全程自动跑一遍</small></h2>
+  <div class="simBody">
+    <div class="simScenes" id="simScenes"></div>
+    <div class="simStage">
+      <canvas id="simCv"></canvas>
+      <div class="tclock">T + <b id="simT">00:00</b><span style="margin-left:8px" id="simTag">待命</span></div>
+      <div class="simOverlay">
+        <div class="stepNow" id="stepNow">请选择场景，然后点击「开始推演」</div>
+        <div class="stepDesc" id="stepDesc">推演将完整展示：感知 → 通信 → 算力 → 应用 四层如何协同，并与传统模式做时效对比。</div>
+      </div>
+      <div class="scanLine" id="simScan" style="display:none"></div>
+    </div>
+    <div class="simLog">
+      <h4>推 演 时 间 轴</h4>
+      <div class="logList" id="logList"></div>
+      <div class="simFoot">
+        <div class="cmpWrap">
+          <div class="cmpRow"><span class="nm">传统模式</span><div class="cmpTrack"><i id="cmpOld" style="width:0;background:linear-gradient(90deg,#ff5c6c,#ff9a5c)"></i></div><span class="vl" id="cmpOldV" style="color:#ff8a92">—</span></div>
+          <div class="cmpRow"><span class="nm">本平台</span><div class="cmpTrack"><i id="cmpNew" style="width:0;background:linear-gradient(90deg,#25e6c0,#3fa9ff)"></i></div><span class="vl" id="cmpNewV" style="color:#25e6c0">—</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <button class="sbtn" style="flex:1;text-align:center" onclick="simStep(-1)">◀ 上一步</button>
+        <button class="sbtn" id="simPlay" style="flex:1.4;text-align:center;--sc:#ffb63d" onclick="simToggle()">▶ 开始推演</button>
+        <button class="sbtn" style="flex:1;text-align:center" onclick="simStep(1)">下一步 ▶</button>
+      </div>
+    </div>
+  </div>
+  <div class="footNote">交互提示：四个场景任选其一 · 支持自动播放与单步推进 · 右侧时间轴记录每一步的卫星动作、AI 动作与产出</div>
+</section>
+
+<!-- ============ S6V 哈萨克火情监测真实系统运行实录（5 系统 · 6 步 · 多轨并发） ============ -->
+<section class="scene" id="s6v">
+  <div class="vwHead">
+    <div>
+      <div class="eyebrow"><b>05+ / REAL SYSTEM · FIRE MONITORING</b></div>
+      <h2 class="head">哈萨克火情监测 · 真实系统运行实录 <small>火点研判 → 卫星拍摄 → 星地回传 → 智能分析 → 指控调度，五个真实系统按业务时序自动连播</small></h2>
+    </div>
+    <div class="vwOps">
+      <span class="vwStep" id="vwStep">第 1 / 6 步</span>
+      <button class="sbtn" id="vwPrev" onclick="vwJump(-1)">◀ 上一步</button>
+      <button class="sbtn" id="vwToggle" style="--sc:#ffb63d" onclick="vwPlayPause()">⏸ 暂停</button>
+      <button class="sbtn" onclick="vwJump(1)">下一步 ▶</button>
+      <button class="sbtn" id="vwMute" onclick="vwMute()">🔇 静音</button>
+    </div>
+  </div>
+  <div class="vwGrid" id="vwGrid">
+    <div class="vwCell idle" data-vw="3" data-name="灵观"><video data-src="video/灵观.mp4" preload="none" playsinline webkit-playsinline muted></video><div class="vwIdle"><b>③</b>灵观</div><div class="vwTag"><b>③</b>灵观</div><div class="vwState">待播</div><div class="vwBar"><i></i></div><div class="vwMask" onclick="vwUnlock(event)"><b>▶ 点击继续播放</b><span>浏览器暂停了自动播放，点此恢复</span></div></div>
+    <div class="vwCell mid idle" data-vw="1" data-name="智能体"><video data-src="video/智能体.mp4" preload="none" playsinline webkit-playsinline muted></video><div class="vwIdle"><b>①</b>智能体</div><div class="vwTag"><b>①</b>智能体</div><div class="vwState">待播</div><div class="vwBar"><i></i></div><div class="vwMask" onclick="vwUnlock(event)"><b>▶ 点击继续播放</b><span>浏览器暂停了自动播放，点此恢复</span></div></div>
+    <div class="vwCell idle" data-vw="2" data-name="灵驭"><video data-src="video/灵驭.mp4" preload="none" playsinline webkit-playsinline muted></video><div class="vwIdle"><b>②</b>灵驭</div><div class="vwTag"><b>②</b>灵驭</div><div class="vwState">待播</div><div class="vwBar"><i></i></div><div class="vwMask" onclick="vwUnlock(event)"><b>▶ 点击继续播放</b><span>浏览器暂停了自动播放，点此恢复</span></div></div>
+    <div class="vwCell idle" data-vw="4" data-name="火情校验"><video data-src="video/火情校验.mp4" preload="none" playsinline webkit-playsinline muted></video><div class="vwIdle"><b>④</b>火情校验</div><div class="vwTag"><b>④</b>火情校验</div><div class="vwState">待播</div><div class="vwBar"><i></i></div><div class="vwMask" onclick="vwUnlock(event)"><b>▶ 点击继续播放</b><span>浏览器暂停了自动播放，点此恢复</span></div></div>
+    <div class="vwCell idle" data-vw="5" data-name="指挥调度系统"><video data-src="video/指挥调度系统.mp4" preload="none" playsinline webkit-playsinline muted></video><div class="vwIdle"><b>⑤</b>指挥调度系统</div><div class="vwTag"><b>⑤</b>指挥调度系统</div><div class="vwState">待播</div><div class="vwBar"><i></i></div><div class="vwMask" onclick="vwUnlock(event)"><b>▶ 点击继续播放</b><span>浏览器暂停了自动播放，点此恢复</span></div></div>
+  </div>
+  <div class="vwMeaning" id="vwMeaning"><span class="vwMIdx">第 1 步</span><span class="vwMTxt"></span></div>
+  <div class="footNote">实录说明：以上为哈萨克火情监测的真实系统运行画面，按业务时序分步推进、部分系统同时在线 · 右上角可暂停 / 单步 / 静音 · 触屏设备建议横置观看</div>
+</section>
+
+<!-- ============ S7 驾驶舱 ============ -->
+<section class="scene" id="s7">
+  <div class="eyebrow"><b>06 / AI COCKPIT</b></div>
+  <h2 class="head">领导驾驶舱 · 一句话问，全系统应答 <small>领导不需要知道用了哪颗卫星 —— 但系统必须知道，并且自动把它调出来</small></h2>
+  <div class="cockBody">
+    <div class="qList" id="qList"></div>
+    <div class="termBox">
+      <div class="termHead">
+        <div class="av">AI</div>
+        <div><b>平台智能体 · 决策辅助</b><br><span id="termSub">等待提问 · 已接入 4 类卫星资源 · 3 级算力池 · 12 个行业模型</span></div>
+      </div>
+      <div class="termBody" id="termBody">
+        <div style="color:#5f7691;font-size:18px;line-height:2">
+          请从左侧选择一个问题。系统将演示：<br>
+          ① 自动编排需要调用哪些<b style="color:#8fd3ff">卫星资源</b>（含过境窗口与传感器选择）<br>
+          ② 自动调度<b style="color:#c9a8ff">算力</b>（星上 / 边缘 / 中心）<br>
+          ③ 大模型融合多源数据后给出的<b style="color:#ffcc5c">决策建议</b>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footNote">交互提示：回答内容为规划示意 · 正式汇报时可接入真实大模型与业务数据，实现现场实时问答</div>
+</section>
+
+<!-- ============ S8 路线图 ============ -->
+<section class="scene" id="s8">
+  <div class="eyebrow"><b>07 / ROADMAP &amp; VALUE</b></div>
+  <h2 class="head">三步走实施路线与预期成效 <small>一年打基础、两年成能力、三年出体系 —— 每一阶段都有可交付、可验收的成果</small></h2>
+  <div class="roadBody">
+    <div class="phases">
+      <div class="phase">
+        <div class="ph">PHASE 01</div><h3>通感接入 · 打底座</h3><div class="yr">第 1 年</div>
+        <ul>
+          <li>接入高中低轨遥感/通信卫星资源，统一时空底座</li>
+          <li>建成多源数据湖与影像自动处理流水线</li>
+          <li>遴选 2 个高频场景做示范（火情 / 内涝）</li>
+          <li>算力以中心智算中心为主，边缘试点</li>
+        </ul>
+        <div class="goal">🎯 验收：数据看得见、查得到、出得来图</div>
+      </div>
+      <div class="phase">
+        <div class="ph">PHASE 02</div><h3>星上智能 · 成能力</h3><div class="yr">第 2 年</div>
+        <ul>
+          <li>部署星上 AI 推理，实现在轨目标识别与切片回传</li>
+          <li>建成星地协同算力调度引擎</li>
+          <li>行业大模型微调上线，四大板块全面铺开</li>
+          <li>应急场景端到端时效进入 30 分钟级</li>
+        </ul>
+        <div class="goal">🎯 验收：从「传数据」变为「传信息」</div>
+      </div>
+      <div class="phase">
+        <div class="ph">PHASE 03</div><h3>自主编排 · 出体系</h3><div class="yr">第 3 年</div>
+        <ul>
+          <li>智能体自主编排感知—通信—算力资源</li>
+          <li>卫星任务可由应用侧反向提出、自动排程</li>
+          <li>能力服务化输出，形成标准产品与接口</li>
+          <li>建成「越用越准」的闭环自进化机制</li>
+        </ul>
+        <div class="goal">🎯 验收：领导一句话，系统跑全程</div>
+      </div>
+    </div>
+    <div class="kpiRow">
+      <div class="kpi"><b id="v1">0</b><span>全域覆盖能力</span><em>含无网无人区</em></div>
+      <div class="kpi"><b id="v2">0</b><span>应急端到端时效</span><em>由 6 小时压缩</em></div>
+      <div class="kpi"><b id="v3">0</b><span>回传数据量压缩</span><em>星上 AI 在轨处理</em></div>
+      <div class="kpi"><b id="v4">0</b><span>重复建设成本下降</span><em>一套底座四板块复用</em></div>
+      <div class="kpi"><b id="v5">0</b><span>重大事件漏报率</span><em>多源交叉验证</em></div>
+    </div>
+  </div>
+  <div class="footNote">注：以上指标为规划目标示意 · 正式汇报前请以本单位基线数据校准</div>
+</section>
+
+<!-- ============ S9 星座沙盘 ============ -->
+<section class="scene" id="s9">
+  <div class="eyebrow"><b>08 / CONSTELLATION</b></div>
+  <h2 class="head">星 · 在轨星座沙盘 <small>点击任意一颗卫星（或右侧名录）—— 查看它的档案，地球上的光圈就是它此刻覆盖的区域；高轨卫星与地球同步、始终定点，低轨卫星快速绕行</small></h2>
+  <div class="orbBody">
+    <div class="orbStage">
+      <canvas id="orbCv"></canvas>
+      <div class="orbHint" id="orbHint">🛰 点击卫星查看档案 · 再点空白处取消</div>
+      <div class="orbLegend" id="orbLegend"></div>
+    </div>
+    <div class="orbSide">
+      <div class="orbCard">
+        <h3 id="stName">— 请选择一颗卫星 —</h3>
+        <span class="stChip" id="stChip" style="border-color:#4a6a92;color:#9fb8d4">未选择</span>
+        <div class="stKv" id="stKv"></div>
+        <div class="stDesc" id="stDesc">左侧地球上有 13 颗在轨卫星：排在第一位的中星 26 号是我国首颗单星容量超 100 Gbps 的高通量卫星；高轨 6 颗与地球同步转动、始终定点在各自上空，中轨 1 颗、低轨 6 颗快速绕行。点击它们试试。</div>
+        <div class="stNote">备注：据公开统计，截至 2026 年我国在轨运行卫星已<b>超过 1,000 颗</b>（不同口径统计约 1,300—1,500 颗，且仍在快速增长）。本沙盘仅选取其中 <b>13 颗</b> 作为代表演示，<b>未全部展示，仅作部分介绍</b>。</div>
+        <div class="stLive" id="stLive">实时星下点：—</div>
+      </div>
+      <div class="orbList" id="orbList"></div>
+    </div>
+  </div>
+  <div class="footNote">交互提示：点击任意卫星看档案与覆盖光圈 · 13 颗卫星持续绕行 · 轨道参数为公开资料量级示意，正式汇报前可校准</div>
+</section>
+
+<!-- ============ S10 来用卫星吧（互动小游戏） ============ -->
+<section class="scene" id="s10">
+  <div class="eyebrow"><b>10 / USE THE SATELLITE</b></div>
+  <h2 class="head"><span class="hlGame">来用卫星吧</span> · 请您来当调度员 <small>展会互动体验：亲手完成一次「测运控上注 → 卫星成像回传 → AI 分析 → 装备调度 → 报告生成」的全流程闭环，感受平台的综合调度能力</small></h2>
+  <div class="gameBody">
+    <div class="gLeft">
+      <div class="gMission"><h4>📋 任务简报</h4><p id="gBrief">点击下方「🚀 开始任务 / 换一个场景」—— 一条突发事件即将下发到您手中。</p></div>
+      <div class="gSteps" id="gSteps"></div>
+      <div class="gScoreCard"><b id="gPts">0</b><span>任务得分</span><div class="gRank" id="gRank">—</div></div>
+    </div>
+    <div class="gStage">
+      <canvas id="gameCv"></canvas>
+      <div class="gTimer">任务用时<b id="gTime">0.0s</b></div>
+      <div class="gSceneTag" id="gSceneTag">演练沙盘 · 山林火情</div>
+      <div class="gBanner" id="gBanner"></div>
+    </div>
+    <div class="gRight">
+      <div class="gPickTip" id="gPickTip">👆 请选择</div>
+      <div class="gChoices" id="gChoiceBox"><h5>等待任务开始…</h5></div>
+      <div class="gLog" id="gLog"><div>调度日志就绪，等待任务下发。</div></div>
+      <button class="gStart" id="gStartBtn" onclick="gameStart()">🚀 开始任务</button>
+    </div>
+  </div>
+  <div class="footNote">玩法提示：系统随机派发突发事件（山林火情 / 城市内涝 / 海上搜救 / 农田旱情，底图各不相同）—— 先选出最合适的卫星完成测运控上注，星上 AI 在轨切片回传，地面大模型接力分析，再出动无人机 / 机器狗现场处置并生成报告。有光晕闪烁的地方，就是请您动手的地方！</div>
+</section>
+
+<div class="dock">
+  <button onclick="page(-1)">‹</button>
+  <div class="dots" id="dots"></div>
+  <button onclick="page(1)">›</button>
+  <span class="pno num" id="pno">1/12</span>
+  <button id="autoBtn" onclick="toggleAuto()">▶ 自动演示</button>
+  <button onclick="go(0)">⌂ 首页</button>
+</div>
+
+</div></div>
+
+<!-- 竖屏提示：位于 #fit 之外，避免被舞台 transform 影响定位 -->
+<div id="rotHint">
+  <span class="rico">📱</span>
+  <h3>建议横置设备观看</h3>
+  <p>当前已自动切换为横屏布局，画面铺满全屏<br>点击右上角「⛶ 全屏」可获得沉浸式全屏体验</p>
+  <button id="rotSkip" type="button">知道了</button>
+</div>
